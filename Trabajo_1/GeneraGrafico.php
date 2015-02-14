@@ -1,63 +1,42 @@
 <?php
-header("Content-type: image/jpg");
+header("Content-type: image/png");
 //se define variable de tipo imagen
-$image = imagecreatetruecolor(400, 400);
-//DATOS DE MI db
-$ventas = [
-	"enero" => 200,
-	"febrero" => 300,
-	"marzo" => 100,
-	"abril" => 150
-];
+$image = imagecreatetruecolor(400, 600);
 
 $fondo = imagecolorallocate($image, 18, 144, 255);
 $rojo = imagecolorallocate($image, 255, 0, 0);
 
 imagefilltoborder($image, 50, 50, $fondo, $fondo);
-generarTablaDB($image,'ventasN',$rojo);
+
+generarTabla($image,'ventasM');
 //se crea la imagen
-imagejpeg($image);
+imagePNG($image);
 //se destrulle la imagen
 imagedestroy($image);
 /*===============================*/
-//creamos las figuras punto1 , punto 2
-// para lo cual seria x1,y1  ,  x2,y2
-// respectivamente INICIO,BASE,ANCHO,ALTO
-	// function generarTabla($image,$datos){
-	// 	$base = 380;
-	// 	$inicio = 10;
-	// 	$ancho = 20;
-	// 	$alto_img = imagesy($image);
-	// 	foreach ($datos as $key => $value) {
-	// 	 // key = febrero y value = 300
-	// 	  imagefilledrectangle($image, $inicio,$base,$inicio+$ancho, $alto_img -$value, generaColor($image));
-	// 	  /* como va hacia abajo, febrero seria la columna mas corta
-	// 	  * mediendo 100, para corregir eso 400-300 = 100
-	// 	  * por lo tando de 400 a 100 hay 300 ese seria el alto
-	// 	  */
-	// 	  $inicio += $ancho+10;
-	//     }
-	// }
 
-function generarTablaDB($image,$tabla,$color){
-
+function generarTabla($image,$tabla){
+    //creamos las figuras punto1 , punto 2
+	// para lo cual seria x1,y1  ,  x2,y2
+	// respectivamente INICIO,BASE,ANCHO,ALTO
 	$base = 380;
 	$inicio = 10;
 	$ancho = 20;
-	$alto_img = imagesy($image);
+	$font = "LBRITEDI.ttf";
 
-	$conexion = mysql_connect('localhost','root','');
-
-	mysql_select_db('supermercado');
-
-	$sql = "SELECT * FROM $tabla"; 
-
-
-	$resultado = mysql_query($sql,$conexion);
+	//conexion y query
+	$conexion = mysql_connect("localhost","root","");
+	mysql_select_db('supermercado',$conexion);
+	$sql = "SELECT * FROM ".$tabla.""; 
+	$resultado = mysql_query($sql);
 
 	while($fila = mysql_fetch_array($resultado)){
-		 imagefilledrectangle($image, $inicio,$base,$inicio+$ancho, $alto_img -$fila['valor'], $color);
-	  $inicio += $ancho+10;
+		  //crea una columna de la tabla
+		 imagefilledrectangle($image, $inicio,$base,$inicio+$ancho, $base -$fila['valor'], generaColor($image));
+		 //se agega el texto  a la columna
+		 imagettftext($image, 10, -50, $inicio, $base+10,null, $font, $fila['nombre']);
+		 //para el espacio entre columnas
+	  	$inicio += $ancho+10;
 	}
 }
 
