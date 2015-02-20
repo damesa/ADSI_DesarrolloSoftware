@@ -1,0 +1,3 @@
+<?php 
+	cargarview('home');
+ ?>
