@@ -1,8 +1,8 @@
 <?php 
 
-	require 'lib/JpGraph-master/src/jpgraph.php';
-	require 'lib/JpGraph-master/src/jpgraph_pie.php';
-	require 'lib/JpGraph-master/src/jpgraph_pie3d.php';
+	require '../lib/JpGraph-master/src/jpgraph.php';
+	require '../lib/JpGraph-master/src/jpgraph_pie.php';
+	require '../lib/JpGraph-master/src/jpgraph_pie3d.php';
 
 	require 'config.php';
 

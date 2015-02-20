@@ -1,7 +1,7 @@
 <?php 
 
-	require 'lib/JpGraph-master/src/jpgraph.php';
-	require 'lib/JpGraph-master/src/jpgraph_bar.php';
+	require '../lib/JpGraph-master/src/jpgraph.php';
+	require '../lib/JpGraph-master/src/jpgraph_bar.php';
 	require 'config.php';
 
 	//crear objeto de la clase graph
