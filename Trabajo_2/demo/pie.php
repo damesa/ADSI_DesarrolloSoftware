@@ -11,6 +11,7 @@
 	$piegraph->SetScale("textlin");
 
 	$pieplot = new PiePlot3D($data_u);
+	$pieplot->SetTheme("pastel");
 	//cargar legenda de datos
 	$pieplot->SetLegends($data_n);
 	//tamaño - referente al lienzo
