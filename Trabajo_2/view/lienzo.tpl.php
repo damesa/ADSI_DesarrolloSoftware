@@ -14,7 +14,7 @@
  				<img src="<?= $_GET['imagen']; ?>">
  			</figure>
  			<footer>
- 				<p><?= $_GET['nota']; ?></p>
+ 				<!-- <p><?= $_GET['nota']; ?></p> -->
  			</footer>
  		</article>
 

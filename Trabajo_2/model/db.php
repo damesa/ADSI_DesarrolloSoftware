@@ -5,23 +5,23 @@
 class db
 {
 
-	public $db_db  = '';
-	public $db_tabla = '';
+	public $nombre  = '';
+	public $tabla = '';
 
 	public $data= array();
 	public	$host = 'localhost';
 	public	$user = 'root';
 	public	$pass = 'root';
 
-	function __construct($db,$tabla)
+	function __construct($nombreDB,$tabla)
 	{
-		$this->db_db = $db;
-		$this->db_tabla = $tabla;
+		$this->nombre = $nombreDB;
+		$this->tabla = $tabla;
 	}
 
-	public function SetDataBase($dataBase)
+	public function SetDataBase($nombreDB)
 	{
-		$this->db_db=$dataBase;
+		$this->nombre=$nombreDB;
 	}
 
 	public function SetTabla($tabla)
@@ -29,23 +29,22 @@ class db
 		$this->db_tabla=$tabla;
 	}
 
-	private function LoadTable()
+	private function CargarTabla()
 	{
 		# code...
 	}
 
-	public function Actualizar($conexion)
+	public function Actualizar()
 	{
+		$conexion = mysqli_connect($this->host,$this->user,$this->pass,$this->nombre);
 		//cargar datos
-		print $this->db_db;
-		mysqli_select_db($this->db_db,$conexion);
+		print $this->tabla;
+		$sql = "SELECT * FROM $this->tabla";
+		$result= mysqli_query($conexion,$sql);
 
-		$sql = "SELECT * FROM $this->db_tabla";
-		$result= mysqli_query($sql);
-
-		while ($fila = mysql_fetch_array($result)) {
-		$this->data['labels'][] =  $fila['nombre'];
-		$this->data['values'][] =  $fila['respuesta'];
+		while ($fila = mysqli_fetch_array($result)) {
+		print $this->data['labels'][] =  $fila['nombre'];
+		print $this->data['values'][] =  $fila['respuesta'];
 		} 
 	}
 
