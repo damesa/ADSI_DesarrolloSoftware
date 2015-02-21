@@ -15,7 +15,7 @@ class db
 	{
 		$this->db_db = $db;
 		$this->db_tabla = $tabla;
-		$this->$conexion = $conexion;
+		$this->$conexion = mysql_connect($this->$db_host,$this->db_user,$this->db_pass);
 	}
 
 	public function SetDataBase($dataBase)

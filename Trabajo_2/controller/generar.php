@@ -1,9 +1,9 @@
 <?php 
 	
-	$title = $_POST['tb'];
-	$imagen = "";
-	$nota = "";
+	CargarModel('db');
 
-	cargarview('lienzo');
+
+	$_POST['titulo']="titulo";
+	CargarView('lienzo');
 
  ?>

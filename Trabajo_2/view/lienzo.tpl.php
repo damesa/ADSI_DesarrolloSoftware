@@ -8,7 +8,7 @@
  	</div>
  		<article>
  			<header>
- 				<h1><?= $_GET['titulo']; ?></h1>
+ 				<h1><?= $_POST['titulo']; ?></h1>
  			</header>
  			<figure>
  				<img src="<?= $_GET['imagen']; ?>">
