@@ -4,18 +4,19 @@
 */
 class db
 {
-	private $db_host = 'localhost';
-	private $db_user = 'root';
-	private $db_pass = 'root';
+
 	private $db_db  = '';
 	private $db_tabla = '';
+	public $conexion;
 	private $data= array();
+	public	$host = 'localhost';
+	public	$user = 'root';
+	public	$pass = 'root';
 
-	function __construct($conexion,$db,$tabla)
+	function __construct($db,$tabla)
 	{
 		$this->db_db = $db;
 		$this->db_tabla = $tabla;
-		$this->$conexion = mysql_connect($this->$db_host,$this->db_user,$this->db_pass);
 	}
 
 	public function SetDataBase($dataBase)
@@ -33,10 +34,10 @@ class db
 		# code...
 	}
 
-	public function Actualizar()
+	public function Actualizar($conexion)
 	{
 		//cargar datos
-		mysql_select_db($this->$db_db,$this->$conexion);
+		mysql_select_db($this->$db_db,$conexion);
 
 		$sql = "SELECT * FROM $this->$db_tabla";
 		$result= mysql_query($sql);

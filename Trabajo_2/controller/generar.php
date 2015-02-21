@@ -3,7 +3,10 @@
 	CargarModel('db');
 
 
-	$_POST['titulo']="titulo";
+	 $db = new db($_POST['db'],$_POST['tb']);
+	 $conexion = mysql_connect($db->host,$db->user,$db->pass);
+
+	$_POST['titulo']=$_POST['db'];
 	CargarView('lienzo');
 
  ?>
