@@ -1,29 +1,4 @@
 <?php 
-	//config databese
-	$db_host = 'localhost';
-	$db_user = 'root';
-	$db_pass = 'root';
-	$db_db  = 'musica';
-	$db_table = 'instrumentos';
-
-	//conexion
-	$conexion = mysql_connect($db_host,$db_user,$db_pass);
-	echo mysql_error();
-
-	//cargar datos
-	mysql_select_db($db_db,$conexion);
-
-	$sql = "SELECT * FROM instrumentos";
-	$data= mysql_query($sql);
-
-	$data_n = array();
-	$data_u = array();
-
-	while ($fila = mysql_fetch_array($data)) {
-		$data_n[] =  $fila['nombre'];
-		$data_u[] =  $fila['uso'];
-	} 
-
 /**
 * db clasess con los datos
 */
@@ -33,27 +8,42 @@ class db
 	private $db_user = 'root';
 	private $db_pass = 'root';
 	private $db_db  = '';
-	private $db_table = '';
-	private $data_n = array();
-	private $data_u = array();
+	private $db_tabla = '';
+	private $data= array();
 
-	function __construct()
+	function __construct($conexion,$db,$tabla)
 	{
-		
+		$this->db_db = $db;
+		$this->db_tabla = $tabla;
+		$this->$conexion = $conexion;
 	}
 
-	public function SetDataBase($value)
+	public function SetDataBase($dataBase)
 	{
-		$this->$db_db=$value;
+		$this->$db_db=$dataBase;
 	}
 
-	public function SetTabla($value)
+	public function SetTabla($tabla)
 	{
-		$this->$db_table=$value;
+		$this->$db_tabla=$tabla;
+	}
+
+	private function LoadTable()
+	{
+		# code...
 	}
 
 	public function Actualizar()
 	{
-		
+		//cargar datos
+		mysql_select_db($this->$db_db,$this->$conexion);
+
+		$sql = "SELECT * FROM $this->$db_tabla";
+		$result= mysql_query($sql);
+
+		while ($fila = mysql_fetch_array($result)) {
+		$this->data['labels'][] =  $fila['nombre'];
+		$this->data['values'][] =  $fila['uso'];
+		} 
 	}
 }

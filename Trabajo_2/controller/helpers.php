@@ -6,17 +6,19 @@
 		require $file;
 	}
 
-	function cargarcontroller($page){
+	function cargarcontroller($page,$get){
 		$file = "controller/$page.php";
 
 		if(file_exists($file)){
-			require $file;
+			require $file."?".$get;
 		}
 		else{
 			require "controller/404.php";
 		}
 		
 	}
+
+
 
 
  ?>

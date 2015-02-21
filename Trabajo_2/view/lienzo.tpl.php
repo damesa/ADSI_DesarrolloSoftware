@@ -3,15 +3,18 @@
  ?>
  	
  	<section>
+ 	<div>
+ 		<button>Nuevo</button>
+ 	</div>
  		<article>
  			<header>
- 				<h1><?php $title ?></h1>
+ 				<h1><?= $_GET['titulo']; ?></h1>
  			</header>
  			<figure>
- 				<img src="<?php $imagen ?>">
+ 				<img src="<?= $_GET['imagen']; ?>">
  			</figure>
  			<footer>
- 				<p><?php $nota ?></p>
+ 				<p><?= $_GET['nota']; ?></p>
  			</footer>
  		</article>
 
