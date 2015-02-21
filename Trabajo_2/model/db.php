@@ -7,7 +7,7 @@ class db
 
 	private $db_db  = '';
 	private $db_tabla = '';
-	public $conexion;
+
 	private $data= array();
 	public	$host = 'localhost';
 	public	$user = 'root';
@@ -34,17 +34,19 @@ class db
 		# code...
 	}
 
-	public function Actualizar($conexion)
+	public function Actualizar($conexion,$db_db,$db_tabla)
 	{
 		//cargar datos
-		mysql_select_db($this->$db_db,$conexion);
+		mysql_select_db($db_db,$conexion);
 
-		$sql = "SELECT * FROM $this->$db_tabla";
+		$sql = "SELECT * FROM $db_tabla";
 		$result= mysql_query($sql);
 
 		while ($fila = mysql_fetch_array($result)) {
 		$this->data['labels'][] =  $fila['nombre'];
-		$this->data['values'][] =  $fila['uso'];
+		$this->data['values'][] =  $fila['respuesta'];
 		} 
 	}
+
+
 }
