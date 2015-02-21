@@ -5,10 +5,10 @@
 class db
 {
 
-	private $db_db  = '';
-	private $db_tabla = '';
+	public $db_db  = '';
+	public $db_tabla = '';
 
-	private $data= array();
+	public $data= array();
 	public	$host = 'localhost';
 	public	$user = 'root';
 	public	$pass = 'root';
@@ -21,12 +21,12 @@ class db
 
 	public function SetDataBase($dataBase)
 	{
-		$this->$db_db=$dataBase;
+		$this->db_db=$dataBase;
 	}
 
 	public function SetTabla($tabla)
 	{
-		$this->$db_tabla=$tabla;
+		$this->db_tabla=$tabla;
 	}
 
 	private function LoadTable()
@@ -34,13 +34,14 @@ class db
 		# code...
 	}
 
-	public function Actualizar($conexion,$db_db,$db_tabla)
+	public function Actualizar($conexion)
 	{
 		//cargar datos
-		mysql_select_db($db_db,$conexion);
+		print $this->db_db;
+		mysqli_select_db($this->db_db,$conexion);
 
-		$sql = "SELECT * FROM $db_tabla";
-		$result= mysql_query($sql);
+		$sql = "SELECT * FROM $this->db_tabla";
+		$result= mysqli_query($sql);
 
 		while ($fila = mysql_fetch_array($result)) {
 		$this->data['labels'][] =  $fila['nombre'];
