@@ -1,19 +1,18 @@
 <?php 
 	
-	require 'config.php';
+	
 	require '../lib/JpGraph-master/src/jpgraph.php';
 	require '../lib/JpGraph-master/src/jpgraph_pie.php';
 	require '../lib/JpGraph-master/src/jpgraph_pie3d.php';
-
-
+   
 	$piegraph = new PieGraph(500, 400, "auto");
 
 	$piegraph->SetScale("textlin");
 
-	$pieplot = new PiePlot3D($data_u);
+	$pieplot = new PiePlot3D(array(2,3,4));
 	$pieplot->SetTheme("pastel");
 	//cargar legenda de datos
-	$pieplot->SetLegends($data_n);
+	$pieplot->SetLegends(array('uno','dos','tre'));
 	//tamaño - referente al lienzo
   	$pieplot->SetSize(0.30);
   	$pieplot->SetCenter(0.5,0.4);
@@ -31,3 +30,6 @@
 
 	$piegraph->Add($pieplot);
 	$piegraph->Stroke();
+
+
+ ?>
