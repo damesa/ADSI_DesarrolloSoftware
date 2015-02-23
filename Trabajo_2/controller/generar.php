@@ -1,6 +1,6 @@
 <?php 
 	
-	$_POST['imagen'] = "index.php?url=pie";
+	$_POST['imagen'] = "controller/pie.php";
 	CargarView('lienzo');
 
  ?>
