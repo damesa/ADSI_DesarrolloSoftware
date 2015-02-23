@@ -11,10 +11,10 @@
  				<h1><?= $_POST['titulo']; ?></h1>
  			</header>
  			<figure>
- 				<img src="<?= $_GET['imagen']; ?>">
+ 				<img src="demo/pie.php">
  			</figure>
  			<footer>
- 				<!-- <p><?= $_GET['nota']; ?></p> -->
+ 				 <p><?= $_POST['nota']; ?></p>
  			</footer>
  		</article>
 

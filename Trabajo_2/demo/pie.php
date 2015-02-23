@@ -1,10 +1,10 @@
 <?php 
-
+	
+	require 'config.php';
 	require '../lib/JpGraph-master/src/jpgraph.php';
 	require '../lib/JpGraph-master/src/jpgraph_pie.php';
 	require '../lib/JpGraph-master/src/jpgraph_pie3d.php';
 
-	require 'config.php';
 
 	$piegraph = new PieGraph(500, 400, "auto");
 
