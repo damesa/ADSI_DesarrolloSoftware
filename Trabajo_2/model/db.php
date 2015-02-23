@@ -17,6 +17,7 @@ class db
 	{
 		$this->nombre = $nombreDB;
 		$this->tabla = $tabla;
+		$this->Actualizar();
 	}
 
 	public function SetDataBase($nombreDB)
@@ -37,14 +38,12 @@ class db
 	public function Actualizar()
 	{
 		$conexion = mysqli_connect($this->host,$this->user,$this->pass,$this->nombre);
-		//cargar datos
-		print $this->tabla;
 		$sql = "SELECT * FROM $this->tabla";
 		$result= mysqli_query($conexion,$sql);
 
 		while ($fila = mysqli_fetch_array($result)) {
-		print $this->data['labels'][] =  $fila['nombre'];
-		print $this->data['values'][] =  $fila['respuesta'];
+		$this->data['labels'][] =  $fila['nombre'];
+		$this->data['values'][] =  $fila['respuesta'];
 		} 
 	}
 
