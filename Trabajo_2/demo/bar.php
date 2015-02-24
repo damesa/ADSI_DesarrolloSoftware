@@ -7,7 +7,7 @@
 	//crear objeto de la clase graph
 		$graph = new Graph(400,300,'auto');
 		$graph->SetScale("textlin");
-		$theme_class=new VividTheme;
+		$theme_class=new AquaTheme;
 		$graph->SetTheme($theme_class);
 
 		$graph->Set90AndMargin(100,0,50,10);

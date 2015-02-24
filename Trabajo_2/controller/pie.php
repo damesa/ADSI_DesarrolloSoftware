@@ -5,19 +5,34 @@
 	require '../lib/JpGraph-master/src/jpgraph_pie.php';
 	require '../lib/JpGraph-master/src/jpgraph_pie3d.php';
 	
-	require '../model/db.php';
+    $db_host = 'localhost';
+	$db_user = 'root';
+	$db_pass = 'root';
+	$conexion = mysqli_connect($db_host,$db_user,$db_pass,$_POST['db']);
+	echo mysql_error();
 
-	$db = new db($_GET['db'],$_GET['tb']);
-	var_dump($db->data['values']);
+	//cargar datos
+	// mysql_select_db($db_db,$conexion);
 
+	$sql = "SELECT * FROM $_POST['tb']";
+	$data= mysqli_query($conexion,$sql);
+
+	$data_n = array();
+	$data_u = array();
+
+	while ($fila = mysqli_fetch_array($data)) {
+		$data_n[] =  $fila['nombre'];
+		$data_u[] =  $fila['respuesta'];
+	} 
+	
 	$piegraph = new PieGraph(500, 400, "auto");
 
 	$piegraph->SetScale("textlin");
 
-	$pieplot = new PiePlot3D(array(1,2,3));/*$db->data['values']*/
+	$pieplot = new PiePlot3D($data_u);/*$db->data['values']*/
 	$pieplot->SetTheme("pastel");
 	//cargar legenda de datos
-	$pieplot->SetLegends(array('1','2','3'));/*$db->data['labels']*/
+	$pieplot->SetLegends($data_n);/*$db->data['labels']*/
 	//tamaño - referente al lienzo
   	$pieplot->SetSize(0.30);
   	$pieplot->SetCenter(0.5,0.4);
@@ -34,5 +49,5 @@
 	
 
 	$piegraph->Add($pieplot);
-	//$piegraph->Stroke();
+	// $piegraph->Stroke();
 
