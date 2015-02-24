@@ -53,10 +53,10 @@
   function concatenar($string,$array)
   {
          
-    foreach ($array as $key => $value) {
-      $value = saltolinea($value);
+    foreach ($array as $key => $nombre) {
+      $nombre = saltolinea($nombre);
 
-      $array[$key] = $value.$string;
+      $array[$key] = $nombre.$string;
     }
 
     return $array;
@@ -74,7 +74,7 @@
      $c="\n ";
      while (strlen($value)>=$cada-1) {
         $value= substr($value,0,$cada).$c.substr($value,$cada);
-        $cada+=20;
+        $cada+=$cada;
      }
      return $value;
   }
@@ -95,12 +95,12 @@
   // $pieplot->SetLegends($data_n);
   //tamaño - referente al lienzo
     $pieplot->SetSize(200);
-    // $pieplot->SetAngle(70);
+     // $pieplot->SetAngle(70);
     //separar un fragmento
     $pieplot->ExplodeSlice(posmayor($data_u));
     //separa todo
     // $pieplot->ExplodeAll();
-    $pieplot->value->SetFont(FF_FONT1,FS_BOLD);
+    // $pieplot->value->SetFont(FF_FONT1,FS_BOLD);
     //color del valor
     $pieplot->value->SetColor("blue");
     //mover pos del valor

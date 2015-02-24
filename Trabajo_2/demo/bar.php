@@ -5,12 +5,12 @@
 	require '../lib/JpGraph-master/src/jpgraph_bar.php';
 
 	//crear objeto de la clase graph
-		$graph = new Graph(400,300,'auto');
+		$graph = new Graph(600,300,'auto');
 		$graph->SetScale("textlin");
-		$theme_class=new AquaTheme;
+		$theme_class=new PastelTheme;
 		$graph->SetTheme($theme_class);
 
-		$graph->Set90AndMargin(100,0,50,10);
+		// $graph->Set90AndMargin(10,0,50,10);
 	
 		$graph->ygrid->Show(false);
 		$graph->xaxis->SetTickLabels($data_n);
@@ -21,7 +21,7 @@
 		// ...and add it to the graPH
 		$graph->Add($b1plot);
 
-		$b1plot->SetWeight(0);
+		// $b1plot->SetWeight(0);
 
 		$b1plot->SetWidth(10);
 

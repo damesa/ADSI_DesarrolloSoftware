@@ -49,5 +49,6 @@
 	
 
 	$piegraph->Add($pieplot);
-	// $piegraph->Stroke();
+	 $piegraph->Stroke();
 
+?>
