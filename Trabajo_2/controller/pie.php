@@ -8,13 +8,13 @@
     $db_host = 'localhost';
 	$db_user = 'root';
 	$db_pass = 'root';
-	$conexion = mysqli_connect($db_host,$db_user,$db_pass,$_POST['db']);
+	$conexion = mysqli_connect($db_host,$db_user,$db_pass,'pizarradayuri');
 	echo mysql_error();
 
 	//cargar datos
 	// mysql_select_db($db_db,$conexion);
 
-	$sql = "SELECT * FROM $_POST['tb']";
+	$sql = "SELECT * FROM tecnologia";
 	$data= mysqli_query($conexion,$sql);
 
 	$data_n = array();
@@ -49,6 +49,6 @@
 	
 
 	$piegraph->Add($pieplot);
-	 $piegraph->Stroke();
+	$piegraph->Stroke();
 
 ?>
