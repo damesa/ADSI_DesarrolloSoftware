@@ -12,26 +12,23 @@ endif;
 <html>
 <head>
 	<title>Tienda Pepito</title>
+	<link rel="stylesheet"  href="style.css">
 </head>
 <body>
 <header>
 	<h1>ApPepito</h1>
 </header>
 <section>
+	<h2>Producto</h2>
 	<form method="GET">
 		<input type="text" name="nombre" placeholder="Nombre">
 		<input type="number" name="precio" placeholder="Precio">
 		<input type="number" name="cantidad" placeholder="Cantidad">
-		<span>Total: </span>
+		<span><p>Total: </p></span>
 		<input type="number" name="total" value="<?= $_GET['total']  ?>">
 		<input type="submit" name="agregar" value="Agregar">
 	</form>
-	<div class="lista">
-		<?php if (condition): while (/*argumento*/) {
-			# code...
-		} ?>
-		<?php endif ?>
-	</div>
+
 </section>
 </body>
 </html>
