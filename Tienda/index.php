@@ -12,6 +12,7 @@ endif;
 <html>
 <head>
 	<title>Tienda Pepito</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet"  href="style.css">
 </head>
 <body>
@@ -22,8 +23,8 @@ endif;
 	<h2>Producto</h2>
 	<form method="GET">
 		<input type="text" name="nombre" placeholder="Nombre">
-		<input type="number" name="precio" placeholder="Precio">
-		<input type="number" name="cantidad" placeholder="Cantidad">
+		<input type="number" name="precio" placeholder="Precio" min="50">
+		<input type="number" name="cantidad" placeholder="Cantidad" min="1">
 		<span><p>Total: </p></span>
 		<input type="number" name="total" value="<?= $_GET['total']  ?>">
 		<input type="submit" name="agregar" value="Agregar">
