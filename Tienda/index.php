@@ -1,12 +1,25 @@
 <?php 
-	//si no se a enviado
+date_default_timezone_set("America/Bogota") ;
+
+//si no se a enviado
 if (!isset($_POST['agregar'])):
 	$_POST['total'] = 0;
+	$_POST['articulos'] = array();
 else:
-	//si ya se envio
-	$rubro = $_POST['cantidad'] * $_POST['precio'];
+	//datos enviados
+	$nombre   = $_POST['nombre'];
+	$cantidad = $_POST['cantidad'];
+	$precio   = $_POST['precio'];
+
+	$rubro = $cantidad * $precio;
 	$_POST['total'] += $rubro;
+
+	//presintencia de datos
+	$art =  array('n' =>$nombre,'c'=>$cantidad,'p'=>$precio);
+	$_POST['articulos'][] = $art;
+
 endif;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +44,6 @@ endif;
 	</form>
 </section>
 <section class="lista">
-	<?php $lista="" ?>
 	<!-- 	articulos:{
 			 1 :{
 					nombre: "",
@@ -40,21 +52,14 @@ endif;
 			 }
 		} -->
 	<ul>	
-	<?php foreach ($articulos as $id => $datos) { ?>
-		<li>
+	<?php foreach ($_POST['articulos'] as $id => $item): ?>
+		<li id="item_<?= $id ?>">
 		<?php
-			foreach ($datos as $key => $value) {
-				<input type="text" class="$key" value="$value">
-		}?>
+			foreach ($item as $key => $value): ?>
+				<input type="text" name="<?= $key ?>" value="<?= $value ?>">
+		 	<?php endforeach;?>
 		</li>
-	<?php } ?>
-	</ul>
-	<ul>
-		<li>
-			<input type="text">
-			<input type="text">
-			<input type="text">
-		</li>
+	<?php endforeach; ?>
 	</ul>
 </section>
 </body>
