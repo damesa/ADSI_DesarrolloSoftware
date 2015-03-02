@@ -1,11 +1,11 @@
 <?php 
 	//si no se a enviado
-if (!isset($_GET['agregar'])):
-	$_GET['total'] = 0;
+if (!isset($_POST['agregar'])):
+	$_POST['total'] = 0;
 else:
 	//si ya se envio
-	$rubro = $_GET['cantidad'] * $_GET['precio'];
-	$_GET['total'] += $rubro;
+	$rubro = $_POST['cantidad'] * $_POST['precio'];
+	$_POST['total'] += $rubro;
 endif;
 ?>
 <!DOCTYPE html>
@@ -21,12 +21,12 @@ endif;
 </header>
 <section>
 	<h2>Producto</h2>
-	<form method="GET">
-		<input type="text" name="nombre" placeholder="Nombre">
-		<input type="number" name="precio" placeholder="Precio" min="50">
-		<input type="number" name="cantidad" placeholder="Cantidad" min="1">
+	<form method="POST">
+		<input type="text" name="nombre" placeholder="Nombre" required>
+		<input type="number" name="precio" placeholder="Precio" min="50" required>
+		<input type="number" name="cantidad" placeholder="Cantidad" min="1" required>
 		<span><p>Total: </p></span>
-		<input type="number" name="total" value="<?= $_GET['total']  ?>">
+		<input type="number" name="total" value="<?= $_POST['total']  ?>">
 		<input type="submit" name="agregar" value="Agregar">
 	</form>
 
