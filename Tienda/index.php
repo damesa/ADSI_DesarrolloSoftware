@@ -29,7 +29,33 @@ endif;
 		<input type="number" name="total" value="<?= $_POST['total']  ?>">
 		<input type="submit" name="agregar" value="Agregar">
 	</form>
-
+</section>
+<section class="lista">
+	<?php $lista="" ?>
+	<!-- 	articulos:{
+			 1 :{
+					nombre: "",
+					cantidad: 0,
+					precio: 0
+			 }
+		} -->
+	<ul>	
+	<?php foreach ($articulos as $id => $datos) { ?>
+		<li>
+		<?php
+			foreach ($datos as $key => $value) {
+				<input type="text" class="$key" value="$value">
+		}?>
+		</li>
+	<?php } ?>
+	</ul>
+	<ul>
+		<li>
+			<input type="text">
+			<input type="text">
+			<input type="text">
+		</li>
+	</ul>
 </section>
 </body>
 </html>
