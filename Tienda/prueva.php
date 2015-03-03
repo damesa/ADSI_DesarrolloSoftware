@@ -1,9 +1,19 @@
 <?php 
  date_default_timezone_set("America/Bogota") ;
-   $array = array('hola' => 'mundo' );
-   if (isset($_POST['value'])) {
-   	 $array[] = $_POST['value'];
-   }
+
+    if (isset($_POST['enviar'])) {
+           $arr = array();
+           $nombre =  $_POST['nombre'];
+           $precio =  $_POST['precio'];
+           $cantidad =  $_POST['cantidad'];
+
+           $arr = json_decode($_POST['lista']);
+           $arr[] = compact("nombre","precio","cantidad");
+    }
+    else{
+    	$arr = array();
+		$_POST['lista'] = $arr;
+    }
  ?>
  <!DOCTYPE html>
  <html>
@@ -15,12 +25,17 @@
  </head>
  <body>
  	<form method="POST">
- 		<input type="text" name="value">
- 		<input type="submit" value="enviar">
+ 		<input type="text" name="nombre">
+ 		<input type="text" name="precio">
+ 		<input type="text" name="cantidad">
+ 		<?php $json = json_encode($arr) ?>
+ 		<input name="lista" value='<?=$json?>'> 
+ 		<input type="submit" name="enviar" value="enviar">
  	</form>
-	<?php $_POST['hola'] = $array ?>
-	<p> <?php echo var_dump($_POST['hola']); ?></p>	
-	<?php $array2 = $_POST['hola']; ?>
-	<?php var_dump($array2); ?>
+ 	<?php
+ 		echo $json;
+ 		echo "</br>";
+ 		echo $_POST['lista'];
+ 	 ?>
  </body>
  </html>

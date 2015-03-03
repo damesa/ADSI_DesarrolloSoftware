@@ -16,7 +16,6 @@ else:
 
 	//presintencia de datos
 	$art =  array('n' =>$nombre,'c'=>$cantidad,'p'=>$precio);
-	$_POST['articulos'][] = $art;
 
 endif;
 
@@ -44,23 +43,10 @@ endif;
 	</form>
 </section>
 <section class="lista">
-	<!-- 	articulos:{
-			 1 :{
-					nombre: "",
-					cantidad: 0,
-					precio: 0
-			 }
-		} -->
-	<ul>	
-	<?php foreach ($_POST['articulos'] as $id => $item): ?>
-		<li id="item_<?= $id ?>">
-		<?php
-			foreach ($item as $key => $value): ?>
-				<input type="text" name="<?= $key ?>" value="<?= $value ?>">
-		 	<?php endforeach;?>
-		</li>
-	<?php endforeach; ?>
-	</ul>
+	
 </section>
 </body>
 </html>
+
+
+
