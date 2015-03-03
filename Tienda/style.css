@@ -44,6 +44,10 @@ input[name='precio']{
 	width: 49%;
 }
 
+input[name='precio']::before{
+	content: "$ ";
+}
+
 input[name='cantidad']{
 	width: 29%;
 }
@@ -56,6 +60,7 @@ span,input[name='total'],span p{
 }
 
 input[name='total']{
+	display: inherit;
 	right: 1rem;
 	margin-top: 1rem;
 	background: #fff;
@@ -108,10 +113,14 @@ span{
 	width: auto;
 	display: inline-block;
 	max-width: 10%;
-	padding: .5rem 1rem;
+	padding: 1rem .5rem;
+	margin: 0;
 }
 
 .lista ul li input[name="nombre"] {
-	max-width: 40%;
+	max-width: 30%;
 }
 
+i.precio:before,i.rubro:before {
+	content: "$ ";
+}

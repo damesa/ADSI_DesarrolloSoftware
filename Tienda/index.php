@@ -18,7 +18,7 @@ else:
 	//presintencia de datos
 	 $arr = array();
 	 $arr = json_decode($_POST['lista']);
-	 $arr[] = compact("nombre","cantidad","precio");
+	 $arr[] = compact("nombre","cantidad","precio","rubro");
 	 $json = json_encode($arr);
 endif;
 
@@ -48,12 +48,13 @@ endif;
 	</form>
 </section>
 <section class="lista">
-	<?php if (isset($arr)): ?>	
+	<?php if (isset($arr)): ?>
+	<h2>Lista de Articulos</h2>	
 	<ul>
 		<?php foreach ($arr as $key => $item): ?>
 			<li id="item_<?=$key?>">
 				<?php foreach ($item as $campo => $valor):?>
-					<input type="text" name="<?=$campo?>" value="<?=$valor?>">
+					<i class="<?=$campo?>"></i><input type="text" name="<?=$campo?>" value="<?=$valor?>">
 				<?php endforeach; ?>
 			</li>
 		<?php endforeach;?>
