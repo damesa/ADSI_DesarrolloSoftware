@@ -34,7 +34,7 @@ endif;
 <header>
 	<h1>ApPepito</h1>
 </header>
-<section>
+<section class="formulario">
 	<h2>Producto</h2>
 	<form method="POST">
 		<input type="text" name="nombre" placeholder="Nombre" required>

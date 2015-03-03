@@ -124,3 +124,21 @@ span{
 i.precio:before,i.rubro:before {
 	content: "$ ";
 }
+
+@media print{
+	
+	section{
+		font-size: 2rem;
+	}
+
+	.formulario form input[name='nombre'],
+	.formulario form input[name='precio'],
+	.formulario form input[name='cantidad'],
+	.formulario h2,
+	.formulario form input[name='agregar']
+	{
+		display:none;
+	}
+	
+
+}
