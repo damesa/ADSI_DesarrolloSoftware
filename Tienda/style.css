@@ -2,20 +2,29 @@
 	font-size: 16px;
 	font-family: sans-serif;
 }
-body{
-	position: relative;
+html,body{
+	height: 100%;
+	margin: 0;
 	background: #f5f5f5;
 }
 
+body{
+	position: relative;
+	padding: .5rem;
+	max-width: 30rem;
+	margin: 0 auto;
+}
+
 h1{
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 h2{
-	font-size: 1.5rem;
+	font-size: 1rem;
 }
 
 form{
 	padding: 0 1rem;
+	position: static;
 }
 
 input{
@@ -40,15 +49,17 @@ input[name='cantidad']{
 }
 
 span,input[name='total'],span p{
-	position: absolute;
+	position: fixed;
 	margin: 0;
-	top: 120%;
+	bottom: 0;
+
 }
 
 input[name='total']{
 	right: 1rem;
 	margin-top: 1rem;
 	background: #fff;
+	bottom: 1.5rem;
 }
 
 input[type='submit']{
@@ -64,7 +75,7 @@ input[type='submit']:hover{
 }
 
 span p{
-	top: 30%;
+	bottom: 2rem;
 	right: 16rem;
 	font-size: 1.5rem;
 	color: #fff;
@@ -75,5 +86,32 @@ span{
 	width: 100%;
 	height: 5rem;
 	background: #bbb;
+}
+
+.lista{
+	padding: 1rem;
+}
+
+.lista ul{
+	padding: 0;
+	margin: 0;
+}
+
+.lista ul li {
+	list-style: none;
+	background: #fff;
+	box-shadow: 0rem .2rem .2rem #bbb;
+}
+
+.lista ul li input {
+	background: transparent;
+	width: auto;
+	display: inline-block;
+	max-width: 10%;
+	padding: .5rem 1rem;
+}
+
+.lista ul li input[name="nombre"] {
+	max-width: 40%;
 }
 
