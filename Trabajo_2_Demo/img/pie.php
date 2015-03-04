@@ -1,12 +1,12 @@
 <?php 
   
   date_default_timezone_set('America/Bogota');
-
+   require 'helpers.php';
   $DB_NOMBRE = 'pizarradeyuri';
   $DB_TABLA = 'tecnologia';
 
-  $conection = mysqli_connect("localhost","root","root","$DB_NOMBRE");
-  mysqli_error();
+  $conection = mysqli_connect("blast-monarch","root","","$DB_NOMBRE");
+
   $sql ="SELECT * FROM $DB_TABLA";
 
   $tabla = mysqli_query($conection,$sql);
@@ -80,11 +80,9 @@
   }
 
   //++++++++++++++++
-  require '../lib/JpGraph-master/src/jpgraph.php';
-  require '../lib/JpGraph-master/src/jpgraph_pie.php';
-  require '../lib/JpGraph-master/src/jpgraph_pie3d.php';
-
-
+  require pathjpgraph('jpgraph.php');
+  require pathjpgraph('jpgraph_pie.php');
+  require pathjpgraph('jpgraph_pie3d.php');
   $piegraph = new PieGraph(700, 450, "auto");
 
   $piegraph->SetScale("textlin");
@@ -106,7 +104,7 @@
     //mover pos del valor
     $pieplot->SetLabels(concatenar(" %.1f%%",$data_n));
     $pieplot->SetLabelPos(0.9);
-    $pieplot->value->SetFont(FF_ARIAL,FS_NORMAL,8);
+   // $pieplot->value->SetFont(FF_ARIAL,FS_NORMAL,8);
     
     $pieplot->SetGuideLinesAdjust(0.8);
 

@@ -1,12 +1,11 @@
 <?php 
-
+    require 'helpers.php';
     date_default_timezone_set('America/Bogota');
-
   $DB_NOMBRE = 'pizarradeyuri';
   $DB_TABLA = 'tecnologia';
 
-  $conection = mysqli_connect("localhost","root","root","$DB_NOMBRE");
-  mysqli_error();
+  $conection = mysqli_connect("blast-monarch","root","","$DB_NOMBRE");
+
   $sql ="SELECT * FROM $DB_TABLA";
 
   $tabla = mysqli_query($conection,$sql);
@@ -19,9 +18,8 @@
     $data_u[] = $fila['respuesta'];
   }
  // var_dump($data_u);
-  require '../lib/JpGraph-master/src/jpgraph.php';
-  require '../lib/JpGraph-master/src/jpgraph_bar.php';
-
+  require pathjpgraph('jpgraph.php');
+  require pathjpgraph('jpgraph_bar.php');
   //crear objeto de la clase graph
     $graph = new Graph(600,300,'auto');
     $graph->SetScale("textlin");

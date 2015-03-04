@@ -1,0 +1,9 @@
+
+{
+    "name": "ADSI_DesarrolloSoftware",
+    "description": "",
+    "minimum-stability": "dev",
+    "require": {
+        "jpgraph/jpgraph": "dev-master"
+    }
+}
