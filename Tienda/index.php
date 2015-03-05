@@ -28,7 +28,7 @@ endif;
 <head>
 	<title>Tienda Pepito</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet"  href="style.min.css">
+	
 </head>
 <body>
 <header>
@@ -61,6 +61,7 @@ endif;
 	</ul>
 	<?php endif ?>
 </section>
+    <link rel="stylesheet"  href="style.min.css">
 </body>
 </html>
 
