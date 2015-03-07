@@ -61,7 +61,7 @@ endif;
 	</ul>
 	<?php endif ?>
 </section>
-    <link rel="stylesheet"  href="style.min.css">
+    <link rel="stylesheet"  href="Tienda/style.min.css">
 </body>
 </html>
 
