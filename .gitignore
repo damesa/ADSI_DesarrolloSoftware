@@ -44,4 +44,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+#composer
+vendor/
+
+#Archivos de Codio.com
+startup.sh
+
 lib/

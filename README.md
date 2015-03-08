@@ -6,3 +6,8 @@ Consiste en crear graficas a partir de una base de datos
 -Para este su utilizo JpGranph 
 link : https://github.com/corretge/JpGraph
 Guardarlo en la Directorio _lib/JpGraph-master_
+
+#Laraavel5_duilio
+curso de Laravel 5 de Duilio Palacios
+    *composer
+    *laravel5
