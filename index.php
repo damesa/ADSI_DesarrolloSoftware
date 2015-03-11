@@ -6,8 +6,8 @@ if(isset($_GET['url'])){
     if($_GET['url']=='pymestion'){
         require "Tienda/index.php";
     }
-    else if($_GET['url']=='cursogit'){
-        require "Cursos/index.php?url=cursogit";
+    else if($_GET['url']=='cursodegit'){
+        require "Cursogit/index.php";
     }
 }
 else{
