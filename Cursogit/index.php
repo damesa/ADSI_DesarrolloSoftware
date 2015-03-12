@@ -16,10 +16,10 @@
  <section>
     <div class="">
       <object width="250" height="250" >
-        <param name="movie" value="https://www.dropbox.com/s/7gg6yoj6jx3vwnw/CursodeGit_1.swf" >
+        <param name="movie" value="https://dl-web.dropbox.com/get/Tutorial%20Git/CursodeGit_1.swf?_subject_uid=339029498&w=AAA4OKe0jhQqBnWYAZO4qQh4zXzyP4elYGif_cf_YjQcZg&dl=1" >
         <param name="movie" align="left" > 
         <param name="play" value="true" > 
-        <embed src="https://www.dropbox.com/s/7gg6yoj6jx3vwnw/CursodeGit_1.swf" >
+        <embed src="https://dl-web.dropbox.com/get/Tutorial%20Git/CursodeGit_1.swf?_subject_uid=339029498&w=AAA4OKe0jhQqBnWYAZO4qQh4zXzyP4elYGif_cf_YjQcZg&dl=1" >
         </embed>
       </object>
     </div> 

@@ -1,14 +1,16 @@
 <?php
 
 //require "Tienda/index.php"
+$paginas = array(
+    'pymestion' => 'Tienda/index.php',
+    'cursodegit'=> 'Cursogit/index.php',
+    'jquery' => 'jqueryData/index.php'
+);
 
 if(isset($_GET['url'])){
-    if($_GET['url']=='pymestion'){
-        require "Tienda/index.php";
-    }
-    else if($_GET['url']=='cursodegit'){
-        require "Cursogit/index.php";
-    }
+   
+   require $paginas[$_GET['url']];
+    
 }
 else{
     require "Pagina/index.php";

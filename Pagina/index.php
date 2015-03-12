@@ -31,7 +31,16 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. autem dicta ea iste.</p>
         <p><a href="#">link</a></p>
         <a href="index.php?url=cursodegit" class="more">Read More</a>
-    </div> 
+    </div>
+      <div class="card">
+        <figure>
+            <img src="/" alt="">
+        </figure>
+        <h1>Jquery</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. autem dicta ea iste.</p>
+        <p><a href="#">link</a></p>
+        <a href="index.php?url=jquery" class="more">Read More</a>
+    </div>
  </section>
     <link rel="stylesheet" href="Pagina/css/stylus.css">
 </body>
