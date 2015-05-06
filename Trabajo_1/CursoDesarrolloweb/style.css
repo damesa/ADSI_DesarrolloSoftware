@@ -1,0 +1,85 @@
+/*
+    Document   : CursoDesarrolloweb/style.css
+    Created on : 2015-02-27 08:15 PM
+    Author     : damesa
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+root {
+    display: block;
+}
+
+body{
+    position:relative;
+    overflow: slide;
+   
+}
+
+.header{
+    position: relative;
+    min-height: 2rem;
+    background: #bbb;
+}
+
+.header figure{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background: #fff;
+}
+
+.header .menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fff;
+    
+}
+
+nav{
+    background: #bff;
+}
+
+nav ul {
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: .5rem;
+    margin: 0;
+}
+
+nav ul li:hover{
+    background: #fff;
+}
+
+section{
+    padding: .5rem;
+}
+
+.up_boton{
+    position: absolute;
+    text-align: center;
+    max-width: 3rem;
+    min-height: 3rem;
+    border-radius: 50%;
+    background: #bbb;
+    right: 0;
+    bottom: 2rem;
+}
+
+.up_boton a{
+    padding-top: 1rem;
+}
+
+footer{
+   background: #bbb;
+   text-align: center;
+   padding: 1rem;
+}
+
+
